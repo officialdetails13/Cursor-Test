@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile with notification agent",
+      "type": "shell",
+      "command": "python3 scripts/compile_done_agent.py --cmd \"${input:compileCommand}\" --name \"VS Code Compile\" --bell",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "compileCommand",
+      "type": "promptString",
+      "description": "Compile command to run (examples: cargo build, npm run build, dotnet build)",
+      "default": "cargo build"
+    }
+  ]
+}
